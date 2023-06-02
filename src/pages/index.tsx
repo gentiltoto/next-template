@@ -1,15 +1,12 @@
-import { Inter } from 'next/font/google';
+import HomePageLayout from '@/layouts/HomePageLayout';
+import type { NextPageWithLayout } from '@/pages/_app';
 
-const inter = Inter({ subsets: ['latin'] });
+const Home: NextPageWithLayout = () => {
+  return <h1>Next.js Template</h1>;
+};
 
-const Home = () => {
-  return (
-    <main
-      className={`flex min-h-screen flex-col items-center justify-start space-y-4 p-24 ${inter.className}`}
-    >
-      <h1>Next.js Template</h1>
-    </main>
-  );
+Home.getLayout = page => {
+  return <HomePageLayout>{page}</HomePageLayout>;
 };
 
 export default Home;
